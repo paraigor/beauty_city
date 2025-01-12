@@ -54,6 +54,8 @@ WSGI_APPLICATION = "beauty_city.wsgi.application"
 DATABASES = {"default": env.dj_db_url("DATABASE_URL")}
 
 
+AUTH_USER_MODEL = "beauty_city_app.ClientUser"
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -83,8 +85,9 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static/"
-MEDIA_ROOT = BASE_DIR / "media/"
+
 MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media/"
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
